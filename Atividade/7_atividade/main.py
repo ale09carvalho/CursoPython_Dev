@@ -10,56 +10,87 @@ TODO - Atividade 7 - Crei um program que faça as seguites operaçoes:
 # tratameno de exceçao
 '''
 # Lista
+import os
 
-lista = []
+# Lista inicial vazia
+nomes = []
 
-try:
-    while True:
-    # Menu
-        print(f"{'='*10}MENU{'='*20}\n")
-        print("Escolha a opção desejada.")
-        print("1 - Cadastrar um novo nome na lista.")
-        print("2 - Listar nomes cadastrados na lista.")
-        print("3 - Pesquisar por um nome na lista.")
-        print("4 - Alterar um nome na lista.")
-        print("5 - Excluir um nome da lista.")
-        print("6 - Sair do programa.")
+# Laço repeticao
+while True:
+    # ----------------Menu------------------
+    print(f"{'='*10}MENU{'='*20}\n")
+    print("Escolha a opção desejada.")
+    print(" [1] - Cadastrar um novo nome na lista.")
+    print(" [2] - Listar nomes cadastrados na lista.")
+    print(" [3] - Pesquisar por um nome na lista.")
+    print(" [4] - Alterar um nome na lista.")
+    print(" [5] - Excluir um nome da lista.")
+    print(" [6] - Sair do programa.")
     
     opcao = input("Informe a opção desejada: ").strip()
     
+    os.system("cls" if os.name == "nt" else "clear")  # Limpa o terminal
+    
     match opcao:
-        case "1":
-            # Cadastrar novo nome na lista
-            nome = input("Informe o nome a ser cadastrado: ").strip()
-            lista.append(nome) # lista.append(nome) - Adiciona o nome à lista
-            print(f"Nome '{nome}' cadastrado com sucesso!")
 
-        case "2":
-            # Listar nomes cadastrados na lista
-            for i in range(len(nome)): # range(len()) - gera uma sequência de números de 0 até o tamanho da lista - 1
-                print(f"Indice {i}: {nome[i]}")
-        case "3":
-            # Pesquisar por um nome na lista
-            nome_pesquisada = input(("Infomre o nome para pesquisa: ")).title().strip()
-            if nome_pesquisada in lista:
-                print(f"Nome '{nome_pesquisada}' encontrado na lista.") 
-            else:          
-                print(f"Nome '{lista_pesquisada}' não encontrado na lista.")
-        case "4":
-            # TODO - Alterar um nome na lista
-            ...
+        case "1":  # Cadastrar novo nome na lista
+            try:
+                novo_nome = input("Informe o nome a ser cadastrado: ").strip() .title()  # .title() - Converte a primeira letra de cada palavra para maiúscula
+                nomes.append(novo_nome) # lista.append(nome) - Adiciona o nome à lista
+                print(f"Novo nome {novo_nome} cadastrado com sucesso!")
+            except Exception as e:
+                print(f"Erro ao cadastrar o nome: {e}")
+            finally:
+                continue
+        
+        case "2": # Listar nomes cadastrados na lista
+            try:
+                for i in range(len(nomes)): # range(len()) - gera uma sequência de números de 0 até o tamanho da lista - 1
+                    print(f"{i}: {nomes[i]}")
+                print('-'*40)
+            except Exception as e:
+                print(f"Erro ao listar não foi possível exibir: {e}")
+            finally:
+                continue
+
+        case "3": # Pesquisar por um nome na lista
+            nome_pesquisado = input(("Infomre o nome para a pesquisa: ")).title().strip()
+            os.system("cls" if os.name == "nt" else "clear")  # Limpa o terminal
+            qtde = nomes.count(nome_pesquisado)  # nomes.count(nome) - Conta quantas vezes o nome aparece na lista
+            print(f"{nome_pesquisado} aparece {qtde} vez(es) na lista.")
+            continue
+
+        case "4":  # TODO - Alterar um nome na lista
+            try:
+                i = int(input("Infome o indice a ser alterado: "))
+                if i >= 0 and i < len(nomes):
+                    nomes[i] = input("Informe o novo nome: ")
+                    os.system("cls" if os.name == "nt" else "clear")  # Limpa o terminal
+                    print("Nome alterado com sucesso!")
+                else:
+                    print("Posição inválida!")
+            except Exception as e:
+                print(f"Não foi possível alterar: {e}")
+            finally:
+                continue
         case "5":
-            # TODO - Excluir um nome da lista
+            try:
+                i = int(input("Informe a posição do nome a ser excluído: "))
+                if i >= 0 and i < len(nomes): # len() - Retorna o tamanho da lista
+                    del (nomes[i])  # del - Exclui o nome da lista
+                    os.system("cls" if os.name == "nt" else "clear")  # Limpa o terminal
+                    print("Nome excluído com sucesso!")
+                else:
+                    print("Posição inválida!")
+            except Exception as e:
+                print(f"Não foi possível realizar a operação: {e}")
+            finally:
+                continue
             ...
         case "6":
-            # TODO - Sair do programa
-            ...
+            print("Programa encerrado.")
+            break
         case _:
             print("Opção inválida. Tente novamente.")
             continue
-
-except Exception as e:
-    print(f"Ocorreu um erro: {e}")
-finally:
-    print("Programa encerrado.")
-    print(f"Lista final: {lista}")
+    # ----------------Fim do Menu------------------

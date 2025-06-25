@@ -11,6 +11,6 @@ nomes = ["Fulano", "Cicrano", "Beltrano", "João", "Maria", "José"]
 nomes.sort(reverse=True)
 
 # imprime a lista na tela
-for nome in nomes:
+for nome in nomes: # percorre a lista
     print(nome)
 # fim
