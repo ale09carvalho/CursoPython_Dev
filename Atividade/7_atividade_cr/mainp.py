@@ -11,7 +11,7 @@ TODO - Atividade 7 - Crei um program que faça as seguites operaçoes:
 '''
 # Lista
 
-lista = []
+nomes = []
 
 while True:
     # Menu
@@ -29,34 +29,34 @@ while True:
     match opcao:
         case "1":
             nome = input("Informe o nome a ser cadastrado: ").strip()
-            lista.append(nome)
+            nomes.append(nome)
             print(f"Nome '{nome}' cadastrado com sucesso!")
         case "2":
-            if not lista:
+            if not nomes:
                 print("A lista está vazia.")
             else:
                 print("Nomes cadastrados:")
-                for i, nome in enumerate(lista, start=1):
+                for i, nome in enumerate(nomes, start=1):
                     print(f"{i}. {nome}")
         case "3":
             nome = input("Informe o nome a ser pesquisado: ").strip()
-            if nome in lista:
+            if nome in nomes:
                 print(f"Nome '{nome}' encontrado na lista.")
             else:
                 print(f"Nome '{nome}' não encontrado na lista.")
         case "4":
             nome_antigo = input("Informe o nome a ser alterado: ").strip()
-            if nome_antigo in lista:
+            if nome_antigo in nomes:
                 novo_nome = input("Informe o novo nome: ").strip()
-                index = lista.index(nome_antigo)
-                lista[index] = novo_nome
+                index = nomes.index(nome_antigo)
+                nomes[index] = novo_nome
                 print(f"Nome '{nome_antigo}' alterado para '{novo_nome}'.")
             else:
                 print(f"Nome '{nome_antigo}' não encontrado na lista.")
         case "5":
             nome = input("Informe o nome a ser excluído: ").strip()
-            if nome in lista:
-                lista.remove(nome)
+            if nome in nomes:
+                nomes.remove(nome)
                 print(f"Nome '{nome}' excluído da lista.")
             else:
                 print(f"Nome '{nome}' não encontrado na lista.")
