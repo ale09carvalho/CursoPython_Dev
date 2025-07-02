@@ -1,0 +1,6 @@
+Leitura e gravação de arquivos
+Isso é muito útil para criar aplicações onde é necessário armazenar dados nos dispositivos de armazenamentos, 
+como em um HD ou SSD, por exemplo.
+- Ler arquivo
+- Gravar arquivo
+- Adicionando novos dados

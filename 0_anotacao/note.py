@@ -27,3 +27,10 @@ Comment Anchor = 'Comentario de multiplas linhas'
 # HACK - TRECHO PARA MELHORAR
 # BUG - TRECHO PARA CORRIGIR
 # OBS - TRECHO PARA OBSERVAR
+
+
+# Criar a venv
+python -m venv .venv
+
+# Ativar a venv
+.venv\Scripts\activate

@@ -59,6 +59,7 @@ while True:
                 lista.append(usuario)
                 os.system("cls" if os.name == "nt" else "clear")
                 
+            
             except Exception as e:
                 print(f"Nao foi possivel executar a operaço. {e}.")
             finally:
@@ -71,7 +72,7 @@ while True:
 
                     for chave in lista[i]:
                         print(f"{chave.capitalize()}: {lista[i].get(chave)}")
-                    #print('-'*40)
+                    print('-'*40)
             except Exception as e:
                 print(f"Nao foi possivel executar a operaço. {e}.")
             finally:

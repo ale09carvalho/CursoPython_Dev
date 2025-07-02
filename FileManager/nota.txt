@@ -1,0 +1,11 @@
+Anotaçao:
+
+==> Faça como um programador. 
+Quando tudo está errado e confuso, apague tudo e recomece do zero. 
+Faça da sua vida mais “Responsivo”
+
+
+try:
+    ...
+except Exception as e:
+    print(f"Nao foi possível ler o arquivo. {e}.")
