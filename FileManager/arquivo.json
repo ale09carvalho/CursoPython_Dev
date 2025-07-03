@@ -1,0 +1,25 @@
+[
+    {
+        "nome": "Alessandra",
+        "idade": 45,
+        "profissão": "programador",
+        "email":"ale09.gmail.com"
+    },
+
+    {
+        "nome": "Monica",
+        "idade": 25,
+        "profissão": "Analista de sistema",
+        "email":"monica.gmail.com"
+    },
+
+    {
+        "nome": "Jose",
+        "idade": 39,
+        "profissão": "Analista de negocio",
+        "email":"jose.gmail.com"
+    }
+
+] 
+
+

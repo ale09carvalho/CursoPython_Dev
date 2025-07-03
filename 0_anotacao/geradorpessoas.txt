@@ -1,0 +1,9 @@
+BOM PARA BANCO
+https://www.4devs.com.br/
+
+https://www.4devs.com.br/gerador_de_pessoas
+
+
+
+
+JSON é a sigla para JavaScript Object Notation, ou em português, Objeto de Notação JavaScript.
