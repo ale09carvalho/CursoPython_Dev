@@ -5,7 +5,7 @@ try:
     # usuario informa o arquivo
     arquivo = input("Informe o arquivo: ").strip().lower()
 
-    # Le json e desserializa para dicionario
+    # Ler json e desserializa para dicionario
     with open(f"FileManager/{arquivo}.json", "r", encoding="utf-8")as f:
         lista = json.load(f)
 
