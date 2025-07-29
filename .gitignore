@@ -1,0 +1,3 @@
+*/.venv
+#para excluir todos os repositórios a .vev
+*/*/__pycache__
