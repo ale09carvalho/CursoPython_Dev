@@ -30,7 +30,7 @@ def segundo_grau(a, b, c):
             yield f' x" = {x2}'
             
         elif delta == 0:
-           return " Não há raizes reais para x."
+           yield " Não há raizes reais para x."
            ...
         else:
             x = -b/(2*a)
