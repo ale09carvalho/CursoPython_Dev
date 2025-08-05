@@ -34,3 +34,5 @@ python -m venv .venv
 
 # Ativar a venv
 .venv\Scripts\activate
+
+{tecla win .}
