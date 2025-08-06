@@ -41,7 +41,7 @@ if __name__ == "__main__":
         print(" 3 -  Realizar Saque")
         print(" 4 - Gerar extrato - dados da conta")
         print(" 5 - Sessão encerrada")
-        
+
         opcao = input("Opcao desejada: ")
         limpar()
 
@@ -94,3 +94,4 @@ if __name__ == "__main__":
             case __:
                 print("Opcao invalida! Tente novamente.\n")
                 continue
+            

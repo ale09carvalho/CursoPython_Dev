@@ -1,3 +1,4 @@
 */.venv
 #para excluir todos os repositórios a .vev
-*/*/__pycache__
+*__pycache__
+*.gitignore

@@ -1,38 +1,29 @@
-# COMENTARIOS NO PYTHON 
+CONTEÚDO PROGRAM[ATICO: POO
+conceitos fundamentais: Classes, objetos, herança e polimirfismo
+encapsulamento e abstração
+tratamento de exceções
+_____________________________
+ import classes as c
 
-# ctrl + ; atalho para comentar uma linha
+# função main para inserir cod pinc.
+# metodo main
+def main():
+       # instaciar as classes
+    usuario = c.PessoaFisica(nome="", cpf="", telefone="", endereco="")
+    empresa = c.PessoaJuridica(nome_fantasia="", cnpj="", telefone="", endereco="")
 
-'''
-aspas simples
-Comentario de multiplas linhas
+    # definir os valores dos atributos - input usuario
+    print("Entre com os dados do Usuário:\n")
 
-'''
+    usuario.nome = input("Informe o nome: ").strip().title()
+    usuario.cpf =  input("Informe o cpf: ").strip()
+    usuario.telefone =  input("Informe o telefone: ").strip()
+    usuario.endereco =  input("Informe o endereço: ").strip().title()
 
-# ctrl + shift + ; atalho para comentar várias linhas
+# chama o metodo main
+if __name__ == "__main__":
+    main()
 
-"""
-aspas duplas
-Cometario de várias linhas
-"""
-
-Comment Anchor = 'Comentario de multiplas linhas'
-
-# TODO - TRECHO PARA FAZER
-# NOTE - Nota sobre o trecho de código
-# FIXME - Corrigir o trecho do código
-# REVIEW - Revisar o trecho do código
-# Anchor - marcar trecho de código
-# SECTION - Inicia uma seção de TRECHO de código
-# !SECTION - tERMINA UMA SEÇÃO DE TRECHO DE CÓDIGO
-# HACK - TRECHO PARA MELHORAR
-# BUG - TRECHO PARA CORRIGIR
-# OBS - TRECHO PARA OBSERVAR
-
-
-# Criar a venv
-python -m venv .venv
-
-# Ativar a venv
-.venv\Scripts\activate
-
-{tecla win .}
+# Observaçao
+todas as funçoes tem q ser criada antes do algoritmo principal
+no python  exigem colacar as funçoes antes algoritmo principal
