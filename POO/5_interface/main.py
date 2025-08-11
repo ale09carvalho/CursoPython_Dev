@@ -13,7 +13,7 @@ def main():
         saldo=0.0)
     
     while True:
-        print(f"{'-'*20} 🐍🐍BANCO COBRA 🐍 🐍 {'-'*20}\n")
+        print(f"{'-'*20}  🐍BANCO COBRA 🐍 🐍 {'-'*20}\n")
         print("1 - Informar dados do titular")
         print("2 - Depositar")
         print("3 - Sacar")
@@ -25,8 +25,8 @@ def main():
         match opcao:
             case "1": # informar dados do titular
                 try:
-                    nome_titular = input("Informe o nome do titular: ").strip().title()
-                    cpf_titular = input("Informe o CPF do titular: ").strip()
+                    cc.nome_titular = input("Informe o nome do titular: ").strip().title()
+                    cc.cpf_titular = input("Informe o CPF do titular: ").strip()
                     conta = cc.conta
                     agencia = cc.agencia
                     limpar_terminal()
