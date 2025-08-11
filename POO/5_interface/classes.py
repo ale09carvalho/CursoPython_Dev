@@ -13,31 +13,31 @@ class Conta(ABC):
         # atributos private
         self.__saldo = saldo
     
-    # metodo getter
+    # metodo getter do atributo saldo
     @property
     def saldo(self):
         return self.__saldo
 
-    # metodo setter
+    # metodo setter do atributo saldo
     @saldo.setter
     def saldo(self, saldo):
         self.__saldo = saldo
     
 
-    # Metodo de açao
+    # Metodo de açao - @abstractmethod funciona como uma interface, obriga as subclasses a desenvolverem os metodos da superclasse 
     @abstractmethod # garantir que a subsclasse tenha esse metodo
     def consultar_dados(self):
-        pass
+        pass # utilizado como reticencia ...
     
     @abstractmethod
     def depositar(self, valor):
-        pass
+        pass  # utilizado como reticencia ...
 
     @abstractmethod
     def sacar(self, valor):
-        pass
+        pass  # utilizado como reticencia ...
 
-# Classe filha
+# Classe filha - ContaCorrente herdando da classe Conta
 class ContaCorrente(Conta):
     def __init__(self,titular, cpf, agencia, conta, saldo):
         self.__titular = titular
@@ -80,14 +80,14 @@ class ContaCorrente(Conta):
     def conta(self, conta):
         self.__conta = conta
     
-    # Metodos da Interface
+    # Metodos obrigatorio da Interface
     def consultar_dados(self):
-        print (f"{'-'*20} DADOS DA CONTA {'-'*20}\n")
+        print (f"{'-'*20} 🐍DADOS DA CONTA🐍 {'-'*20}\n")
         print (f"Titular da conta: {self.__titular}")
         print (f"CPF do Titular: {self.__cpf}")
         print (f"Agencia: {self.__agencia}")
         print (f"Num Conta: {self.__conta}")
-        print (f"Saldo> R$ {self.saldo:.2f}")
+        print (f"Saldo: R$ {self.saldo:.2f}")
     
     def depositar(self, valor):
         self.saldo += valor
