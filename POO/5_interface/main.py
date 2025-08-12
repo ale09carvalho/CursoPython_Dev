@@ -25,8 +25,8 @@ def main():
         match opcao:
             case "1": # informar dados do titular
                 try:
-                    cc.nome_titular = input("Informe o nome do titular: ").strip().title()
-                    cc.cpf_titular = input("Informe o CPF do titular: ").strip()
+                    cc.titular = input("Informe o nome do titular: ").strip().title()
+                    cc.cpf = input("Informe o CPF do titular: ").strip()
                     conta = cc.conta
                     agencia = cc.agencia
                     limpar_terminal()
