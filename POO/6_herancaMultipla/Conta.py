@@ -2,14 +2,14 @@ import IConta as i
 
 class Conta(i.IConta):
     def __init__(self, agencia, numero, saldo):
-        self._agencia = agencia
-        self._numero = numero
-        self._saldo = saldo
+        self.__agencia = agencia
+        self.__numero = numero
+        self.__saldo = saldo
 
     # set e get
     @property
     def agencia(self):
-        return self._agencia
+        return self.__agencia
     
     @agencia.setter
     def agencia(self, agencia):
