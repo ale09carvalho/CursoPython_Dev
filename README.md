@@ -1,3 +1,4 @@
 
-Curso SENAI - DF - Instrutor de Tecnologia da Informação : Alex Machado Ribeiro🐍
-Linguagem Python com diferentes níveis de complexidade, seguindo manuais técnicos de boas práticas de programação.
+Curso SENAI - DF - Instrutor de Tecnologia da Informação : Alex Machado Ribeiro🐍<br>
+Linguagem Python com diferentes níveis de complexidade, seguindo manuais técnicos de boas práticas de programação.<br>
+https://sistemafibra.org.br/senai/cursos_gratuidade/
