@@ -27,3 +27,14 @@ if __name__ == "__main__":
 # Observaçao
 todas as funçoes tem q ser criada antes do algoritmo principal
 no python  exigem colacar as funçoes antes algoritmo principal
+================================================
+python -m venv .venv  
+.venv\Scripts\activate
+===============================================
+-> deep_translator (instalar biblioteca externa)
+pip install deep_translator
+==============================================
+AUTOMAÇAO (BIBLIOTECA EXTERNA)
+pip install pyautogui
+===========================================
+
