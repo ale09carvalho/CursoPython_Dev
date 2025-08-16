@@ -32,9 +32,16 @@ python -m venv .venv
 .venv\Scripts\activate
 ===============================================
 -> deep_translator (instalar biblioteca externa)
+(from deep_translator import GoogleTranslator)
+
 pip install deep_translator
 ==============================================
 AUTOMAÇAO (BIBLIOTECA EXTERNA)
+(import pyautogui as auto)
 pip install pyautogui
+===========================================
+psutil
+é uma biblioteca multiplataforma para recuperar informações sobre processos em execução e utilização do sistema (CPU, memória, discos, rede, sensores) 
+# pip install psutil
 ===========================================
 
