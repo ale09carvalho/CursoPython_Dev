@@ -1,0 +1,153 @@
+ python -m venv .venv   
+.venv\Scripts\activate 
+----------------------------------------
+O Flet permite que desenvolvedores criem facilmente aplicativos web, mobile e desktop em tempo real em Python.
+A Flet UI foi desenvolvida com Flutter , para que seu aplicativo tenha uma aparência profissional e possa ser entregue em qualquer plataforma. 
+A Flet simplifica o modelo do Flutter combinando "widgets" menores em "controles" prontos para uso com um modelo de programação imperativa.
+
+
+pip install flet
+----------------------------------------
+# Para rodar o app, use o comando:
+# flet run 
+# Certifique-se de estar na pasta 01_primeiro_app_flet
+# e ter o Flet instalado (pip install flet)
+# O app abrirá no navegador padrão
+# ou em uma janela separada, dependendo da configuração do Flet.
+
+----------------------------------
+flet cria o primeiro projeto flet -- já cria o projeto
+COMANDO: => flet create 01_primeiro_app_flet
+
+resultado:
+The app has been created.
+Run the app:
+flet run 01_primeiro_app_flet
+------------------------------------------
+executar 
+ # comando para rodar o app
+PS C:\Users\ead\Python_Dev\Gui> flet run 01_primeiro_app_flet
+
+abre a janela
+--------------------------------------------
+ABRI NO NAVEGADOR 
+# Comando para rodar o app no navegador
+ flet run --web 01_primeiro_app_flet  
+-------------------------------------------
+flet run --android # Executa o app no dispositivo android conectado via USB
+flet run --web     # Executa o app no navegador web
+flet run --desktop # Executa o app no desktop (Windows, Mac ou Linux)
+flet run --help    # Mostra todas as opções do comando flet run
+flet pack         # Empacota o app para distribuição (cria o instalador)
+--------------------------------------------------
+flet run --help
+
+Run Flet app.
+
+positional arguments:
+  script                path to a Python script
+
+options:
+  -h, --help            show this help message and exit
+  -v, --verbose         -v for detailed output and -vv for more detailed
+  -p, --port PORT       custom TCP port to run Flet app on
+  --host HOST           host to run Flet web app on. Use "*" to listen on all IPs.
+  --name APP_NAME       app name to distinguish it from other on the same port
+  -m, --module          treat the script as a python module path as opposed to a file path
+  -d, --directory       watch script directory
+  -r, --recursive       watch script directory and all sub-directories recursively
+  -n, --hidden          application window is hidden on startup
+  -w, --web             open app in a web browser
+  --ios                 open app on iOS device
+  --android             open app on Android device
+  -a, --assets ASSETS_DIR
+                        path to assets directory
+  --ignore-dirs IGNORE_DIRS
+                        directories to ignore during watch. If more than one, separate with a comma.
+
+---------------------------------------------------------------
+
+import flet as ft
+
+def main(page: ft.Page):
+    
+    # Configurações da página
+    page.add(
+        # Área segura - cabeça 
+        ft.SafeArea(
+            ft.Container(
+                ft.Text("Ola, Mundo flet Python!!! 🎶🐍🐍\n")
+            ), 
+            expand=True,
+        )
+    )
+
+ft.app(target=main)
+----------------------------------------------------------------------
+import flet as ft
+
+
+def main(page: ft.Page):
+    
+    # Configurações da página
+    page.add(
+        # Área segura - cabeça 
+        ft.SafeArea( # Cabeçalho
+            ft.Container( 
+                ft.Text("Ola, Mundo flet Python!!! 🎶🐍🐍\n")
+            ), 
+            expand=True,
+        ), 
+        # Corpo
+        ft.Text("😎👻👽 Rodapé")
+    )
+
+ft.app(target=main)
+
+---------------------------------------------------------------------
+    page.add(
+        # Área segura - cabeça 
+        ft.SafeArea( # Cabeçalho
+            ft.Container( 
+                ft.Column([
+                ft.Text("Ola, Mundo flet Python!!! 🎶🐍🐍\n"),
+                ft.Text("Vamos criar uma aplicação com texto e imagem! 📱🖼️✨")
+            ]), 
+            expand=True,
+------------------------------------------------------------------------------
+import flet as ft
+
+
+def main(page: ft.Page):
+    
+    # Configurações da página
+    page.add(
+        ft.SafeArea(  # Cabeçalho
+            ft.Column(
+                [
+                    ft.Container(
+                        ft.Text(
+                            "Ola, Mundo flet Python!!!",
+                            size=30,
+                            weight="bold",
+                        ),
+                        expand=True,
+                    ),
+                    # Corpo
+                    ft.Text("😎👻👽 Rodapé"),
+                ]
+            )
+        )
+    )
+
+ft.app(target=main)
+--------------------------------------------------------------
+
+
+
+
+
+
+
+
+
