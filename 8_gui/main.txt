@@ -1,0 +1,141 @@
+import flet as ft
+
+# Classe que representa uma Tarefa individual
+class Task(ft.Row):  # Cada tarefa é uma linha (Row) com checkbox + botões
+    def __init__(self, text, on_status_change, on_delete):
+        super().__init__()
+        self.text = text                    # Texto da tarefa
+        self.on_status_change = on_status_change  # Função chamada quando marcar/desmarcar
+        self.on_delete = on_delete          # Função chamada quando excluir
+        self.completed = False              # Estado inicial da tarefa: não concluída
+
+        # Checkbox para marcar a tarefa como concluída
+        self.checkbox = ft.Checkbox(label=self.text, value=self.completed, on_change=self.toggle_status)
+        
+        # Botão para editar o texto da tarefa
+        self.edit_btn = ft.IconButton(icon=ft.Icons.EDIT, tooltip="Edit", on_click=self.edit_task)
+        
+        # Botão para excluir a tarefa
+        self.delete_btn = ft.IconButton(icon=ft.Icons.DELETE, tooltip="Delete", on_click=self.delete_task)
+
+        # A linha conterá: [checkbox | botão editar | botão excluir]
+        self.controls = [self.checkbox, self.edit_btn, self.delete_btn]
+
+    # Atualiza o status da tarefa (ativa/concluída)
+    def toggle_status(self, e):
+        self.completed = self.checkbox.value  # True se marcada, False se desmarcada
+        self.on_status_change()               # Chama a função que atualiza a lista
+
+    # Abre um diálogo para editar o texto da tarefa
+    def edit_task(self, e):
+        text_field = ft.TextField(value=self.checkbox.label, autofocus=True)
+
+        # Função para salvar a edição
+        def save(ev):
+            new_label = text_field.value.strip()
+            if new_label:
+                self.checkbox.label = new_label  # Atualiza o texto da tarefa
+            dlg.open = False
+            self.page.update()
+
+        # Cria o diálogo modal
+        dlg = ft.AlertDialog(
+            modal=True,
+            title=ft.Text("Editar tarefa"),
+            content=text_field,
+            actions=[ft.TextButton("Save", on_click=save)],
+        )
+
+        self.page.dialog = dlg
+        dlg.open = True
+        self.page.update()
+
+    # Remove a tarefa da lista
+    def delete_task(self, e):
+        self.on_delete(self)
+
+
+# Função principal do aplicativo
+def main(page: ft.Page):
+    page.title = "Flet To-Do – Aplicativo ToDo"
+    page.window_width = 900
+    page.window_height = 600
+
+    # Campo de texto para digitar nova tarefa
+    new_task = ft.TextField(hint_text="O que precisa ser feito?", expand=True)
+    # Lista de tarefas
+    tasks = ft.Column()
+    # Texto que mostra quantas tarefas ainda estão ativas
+    items_left = ft.Text("0 item(ns) ativo(s) restante(s)") 
+
+    # Abas para filtrar tarefas: todas, ativas, concluídas
+    tabs = ft.Tabs(
+        selected_index=0,
+        tabs=[
+            ft.Tab(text="todos"),
+            ft.Tab(text="ativo"),
+            ft.Tab(text="concluído"),
+        ],
+        on_change=lambda e: update_view()
+    )
+    # -------- Funções internas -------- #
+
+    # Atualiza a visualização da lista conforme a aba selecionada
+    def update_view():
+        status = tabs.selected_index  # 0=all, 1=active, 2=completed
+        for t in tasks.controls:
+            t.visible = (
+                status == 0 or
+                (status == 1 and not t.completed) or
+                (status == 2 and t.completed)
+            )
+        # Conta quantas tarefas ainda estão ativas
+        count = sum(1 for t in tasks.controls if not t.completed)
+        items_left.value = f"{count} active item(s) left"
+        page.update()
+
+    # Adiciona nova tarefa
+    def add_task(e):
+        if new_task.value.strip():
+            task = Task(new_task.value.strip(), update_view, delete_task)
+            tasks.controls.append(task)
+            new_task.value = ""  # Limpa o campo de entrada
+            update_view()
+
+    # Remove tarefa específica
+    def delete_task(task):
+        tasks.controls.remove(task)
+        update_view()
+
+    # Remove todas as tarefas concluídas
+    def clear_completed(e):
+        tasks.controls = [t for t in tasks.controls if not t.completed]
+        update_view()
+
+    # -------- Layout principal -------- #
+
+    # Botão flutuante de adicionar
+    add_btn = ft.FloatingActionButton(icon=ft.Icons.ADD, on_click=add_task)
+
+    # Monta a página
+    page.add(
+        ft.Column(
+            controls=[
+                ft.Row([new_task, add_btn]),  # Entrada + botão de adicionar
+                tabs,                         # Abas de filtro
+                ft.Divider(),
+                tasks,                        # Lista de tarefas
+                ft.Row(                       # Rodapé com contador e limpar concluídos
+                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                    controls=[
+                        items_left,
+                        ft.TextButton("Limpar tarefas completas", on_click=clear_completed),
+                    ],
+                ),
+            ]
+        )
+    )
+
+# Inicia o app
+if __name__ == "__main__":
+    ft.app(target=main)

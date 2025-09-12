@@ -2,19 +2,19 @@
 .venv\Scripts\activate 
 ----------------------------------------
 O Flet permite que desenvolvedores criem facilmente aplicativos web, mobile e desktop em tempo real em Python.
-A Flet UI foi desenvolvida com Flutter , para que seu aplicativo tenha uma aparência profissional e possa ser entregue em qualquer plataforma. 
+A Flet UI foi desenvolvida com Flutter, para que seu aplicativo tenha uma aparência profissional e possa ser entregue em qualquer plataforma. 
 A Flet simplifica o modelo do Flutter combinando "widgets" menores em "controles" prontos para uso com um modelo de programação imperativa.
-
-
+-------------------------------------
+Instalar
 pip install flet
 ----------------------------------------
 # Para rodar o app, use o comando:
-# flet run 
-# Certifique-se de estar na pasta 01_primeiro_app_flet
-# e ter o Flet instalado (pip install flet)
+# flet run <nome-prj>
+----------------------------------------
+# Certifique-se de estar na pasta _app_flet
+# Ter o Flet instalado (pip install flet)
 # O app abrirá no navegador padrão
 # ou em uma janela separada, dependendo da configuração do Flet.
-
 ----------------------------------
 flet cria o primeiro projeto flet -- já cria o projeto
 COMANDO: => flet create 01_primeiro_app_flet
@@ -27,7 +27,6 @@ flet run 01_primeiro_app_flet
 executar 
  # comando para rodar o app
 PS C:\Users\ead\Python_Dev\Gui> flet run 01_primeiro_app_flet
-
 abre a janela
 --------------------------------------------
 ABRI NO NAVEGADOR 
