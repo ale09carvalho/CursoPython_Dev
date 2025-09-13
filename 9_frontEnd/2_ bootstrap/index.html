@@ -6,29 +6,25 @@
     <meta name="author" content="Alessandra" <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
-
-
-    <!-- css gootstrap -->
+    <!-- tag que adiciona o framework bootstrap no CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body class="bg-dark" data-bs-theme="dark">
-    <!--inicio NAV BAR -->
-    <nav class="navbar navbar-expand-lg mb-5" data-bs-theme="dark" style="background-color: #16161d;" >
+
+    <!-- Inicio: navbar -->
+    <nav class="navbar navbar-expand-lg mb-5" data-bs-theme="dark" style="background-color: #16161d;">
         <!-- DIV - CONTAINER-FLUID -->
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-            <img src="assets/img/icons9.png" alt="Icone" style="margin: -10px 0px">
+                <img src="assets/img/icons9.png" alt="Icone" style="margin: -10px 0px">
             </a>
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            
             <!-- DIV  collapse navbar-collapse -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -40,8 +36,9 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Listar
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Listar
                         </a>
 
                         <ul class="dropdown-menu">
@@ -55,37 +52,179 @@
                     </li>
 
                 </ul>
-            
+
             </div>
         </div>
     </nav>
-    <!-- fim do nav bar -->
+    <!-- fim do nav bar-------------- -->
 
     <!-- container -->
     <div class="container">
         <h1>Formuário de Cadastro</h1>
         <hr>
         <form action="">
-            <!-- row -->
-             <div class="row">
-                <div class="col-12 col-md-6 col-lg-8"> 
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            </div>
-                    
-                </div>
-             </div>
 
+            <!-- row -->
+
+            <!-- INI:primeira linha do formulario --------------------------------------------------->
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-8">
+                    <!-- class="col-12 col-md-6 col-lg-8" siginifica configuracao de responsividade -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Nome completo</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text" id="inputGroup-sizing-default">CPF</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+            </div>
+            <!-- FIM:primeira linha do formulario ---------------------------------------------->
+
+            <!-- INI:segunda linha do formulario------------------------------------------------>
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-4">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Telefone</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Data de nascimento</span>
+                        <input type="date" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupSelect01">Genêro</label>
+                        <select class="form-select" id="inputGroupSelect01">
+                            <option selected>escolha...</option>
+                            <option value="1">masculino</option>
+                            <option value="2">feminino</option>
+                            <option value="3">outros</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM:segunda linha do formulario ------------------------------------------------------------->
+
+
+            <!-- INI:terceira linha do formulario----------------------------------------------------------- -->
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-6">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+                        <input type="email" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6">
+                    <div class="input-group mb-4">
+                        <label class="input-group-text" for="inputGroupSelect01">Escolaridade</label>
+                        <select class="form-select" id="inputGroupSelect01">
+                            <option selected>escolha...</option>
+                            <option value="1">Ensino fundamental</option>
+                            <option value="2">Ensino medio</option>
+                            <option value="3">Graduacao</option>
+                            <option value="4">Pos-graducao</option>
+                            <option value="5">Mestrado</option>
+                            <option value="6">Doutorado</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM: 3º linha do formulario -------------------------------------------------------------------->
+            
+                            <!-- INI:campos ENDEREÇO o -->
+            <h5>Endereço</h5>
+            <hr>
+            <!-- INI:4º linha do formulario------------------------------------------------------------>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-2">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">CEP</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">País</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Estado</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Cidade</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+            </div>
+
+            <!-- FIM: da 4º linha do formulario----------------------------------------------------------- -->
+
+            <!-- INI:5° linha do formulario------------------------------------------------------------>
+            <div class="row">
+                <div class="col-12 col-md-5 col-lg-5">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Bairro</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+                <div class="col-12 col-md-7 col-lg-7">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Logradouro</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+            </div>
+            <!-- Fim: da 5º linha do formulario----------------------------------------------------------- -->
+
+            <!-- INI:fim da 6º linha do formulario----------------------------------------------------------- -->
+            <div class="row">
+                <div class="col-12 col-md-9 col-lg-9">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Complemento</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 col-lg-3">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Número</span>
+                        <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+            </div>
+            <!-- Fim: da 6º linha do formulario------------------------------------------------------------->
+
+            <!-- FIM:campos endereco ---------------------------------------------------------------------->
+
+            <!-- INI: 6º linha  Botao enviar ------------------------------------- -->
+            <div class="row">
+                <div class="d-grid gap-2 col-lg-3 mx-auto">
+                    <button class="btn btn-primary" type="button">Enviar</button>
+                </div>
+            </div>
+            <!-- FIM: 6º linha botao enviar ------------------------------------------- -->
 
         </form>
     </div>
+    <!-- FIM:container -->
 
-    <!-- fim do container -->
-
-
-
-    <!-- script js bootstrap  -->
+    <!-- tag que adiciona o framework bootstrap no JavaScript-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
